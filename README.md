@@ -1,4 +1,11 @@
 # AI-Driven Customer Intelligence and Predictive Analytics Platform
+url: https://1rr8qg98-5000.inc1.devtunnels.ms/
+
+output:
+<img width="1918" height="908" alt="Screenshot 2026-06-09 094302" src="https://github.com/user-attachments/assets/97ef80ce-a1c6-4c00-b936-6b1673fb956b" />
+<img width="1919" height="906" alt="Screenshot 2026-06-09 094235" src="https://github.com/user-attachments/assets/39dc14dd-f11c-4787-b177-282d3642b0e6" />
+<img width="1918" height="908" alt="Screenshot 2026-06-09 094302" src="https://github.com/user-attachments/assets/4606f8dd-12c4-4125-8364-f851a25569fd" />
+
 
 ## Overview
 
