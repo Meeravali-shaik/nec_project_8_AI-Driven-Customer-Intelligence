@@ -1,0 +1,36 @@
+<div class="row g-3">
+    <div class="col-md-3">
+        <label class="form-label">Age Min</label>
+        <input type="number" class="form-control" name="age_min" value="{{ filters.age_min }}">
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">Age Max</label>
+        <input type="number" class="form-control" name="age_max" value="{{ filters.age_max }}">
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">Income Min</label>
+        <input type="number" class="form-control" name="income_min" value="{{ filters.income_min }}">
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">Income Max</label>
+        <input type="number" class="form-control" name="income_max" value="{{ filters.income_max }}">
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">City</label>
+        <select class="form-select" name="city">
+            <option value="">All Cities</option>
+            {% for city in options.cities %}
+            <option value="{{ city }}" {% if filters.city == city %}selected{% endif %}>{{ city }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Gender</label>
+        <select class="form-select" name="gender">
+            <option value="">All Genders</option>
+            {% for gender in options.genders %}
+            <option value="{{ gender }}" {% if filters.gender == gender %}selected{% endif %}>{{ gender }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>

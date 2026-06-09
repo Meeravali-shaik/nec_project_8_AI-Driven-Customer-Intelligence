@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-panel mb-4">
+    <div>
+        <p class="eyebrow">Dynamic Purchase Prediction</p>
+        <h2>Predict the next likely purchase and top recommendations</h2>
+        <p class="section-copy">This model uses customer demographics, income, EMI, product interest, website activity, and purchase frequency to estimate the next category.</p>
+    </div>
+    <div class="pill-note">{{ result.prediction }}</div>
+</section>
+
+<div class="row g-4">
+    <div class="col-xl-5">
+        <div class="panel-card">
+            <form method="post">
+                {% include "partials/profile_fields.html" %}
+                <button type="submit" class="btn btn-primary mt-4">Predict Purchase</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-xl-7">
+        <div class="row g-3 mb-4">
+            <div class="col-md-6"><div class="metric-card"><p>Next Likely Purchase</p><h3>{{ result.prediction }}</h3></div></div>
+            <div class="col-md-6"><div class="metric-card"><p>Probability Score</p><h3>{{ result.probability }}%</h3></div></div>
+        </div>
+        <div class="panel-card">
+            <h3 class="mb-3">Top 3 Recommendations</h3>
+            <div class="recommendation-list">
+                {% for item in result.top_recommendations %}
+                <div class="recommendation-item">
+                    <strong>{{ item.product }}</strong>
+                    <span>{{ item.probability }}% probability</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

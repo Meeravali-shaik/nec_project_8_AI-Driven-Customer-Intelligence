@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-panel mb-4">
+    <div>
+        <p class="eyebrow">Dynamic Recommendations</p>
+        <h2>Generate personalized next-best product suggestions</h2>
+        <p class="section-copy">Recommendations are assembled from the predicted next purchase, current product category, and the behavior of similar customers in the same segment.</p>
+    </div>
+    <div class="pill-note">{{ segment.segment }}</div>
+</section>
+
+<div class="row g-4">
+    <div class="col-xl-5">
+        <div class="panel-card">
+            <form method="post">
+                {% include "partials/profile_fields.html" %}
+                <button type="submit" class="btn btn-primary mt-4">Generate Recommendations</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-xl-7">
+        <div class="panel-card">
+            <div class="panel-header">
+                <h3>Recommended Products</h3>
+                <span class="badge-soft">{{ segment.confidence }}% segment confidence</span>
+            </div>
+            <div class="recommendation-list">
+                {% for product in products %}
+                <div class="recommendation-item">
+                    <strong>{{ product }}</strong>
+                    <span>Aligned with {{ profile.Product_Category }} behavior and {{ segment.segment|lower }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

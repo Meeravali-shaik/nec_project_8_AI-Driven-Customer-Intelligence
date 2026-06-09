@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-panel mb-4">
+    <div>
+        <p class="eyebrow">Customer Classification</p>
+        <h2>Predict customer type, segment, and risk category</h2>
+        <p class="section-copy">This view combines Random Forest and Decision Tree models to classify the current profile into the most likely customer class and risk band.</p>
+    </div>
+    <div class="pill-note">{{ result.customer_type }}</div>
+</section>
+
+<div class="row g-4">
+    <div class="col-xl-5">
+        <div class="panel-card">
+            <form method="post">
+                {% include "partials/profile_fields.html" %}
+                <button type="submit" class="btn btn-primary mt-4">Run Classification</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-xl-7">
+        <div class="row g-3">
+            <div class="col-md-6"><div class="metric-card"><p>Customer Type</p><h3>{{ result.customer_type }}</h3></div></div>
+            <div class="col-md-6"><div class="metric-card"><p>Confidence</p><h3>{{ result.customer_probability }}%</h3></div></div>
+            <div class="col-md-6"><div class="metric-card"><p>Risk Category</p><h3>{{ result.risk_category }}</h3></div></div>
+            <div class="col-md-6"><div class="metric-card"><p>Risk Confidence</p><h3>{{ result.risk_probability }}%</h3></div></div>
+        </div>
+
+        <div class="panel-card mt-4">
+            <div class="panel-header">
+                <h3>Retention View</h3>
+                <span class="badge-soft">{{ churn.risk_level }}</span>
+            </div>
+            <p><strong>Churn probability:</strong> {{ churn.probability }}%</p>
+            <p><strong>Recommended action:</strong> {{ churn.recommendation }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

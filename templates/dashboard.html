@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-panel mb-4">
+    <div>
+        <p class="eyebrow">Dynamic Customer Intelligence</p>
+        <h2>Live analytics for every customer profile and market filter</h2>
+        <p class="section-copy">Update the customer inputs or market filters below. Every KPI, model output, recommendation, and Plotly chart is generated from the current values instead of the full static dataset.</p>
+    </div>
+    <div class="pill-note">{{ active_dataset }}</div>
+</section>
+
+<div class="row g-4">
+    <div class="col-xl-5">
+        <div class="panel-card mb-4">
+            <div class="panel-header">
+                <h3>Dataset Snapshot</h3>
+                <span class="badge-soft">{{ dataset_profile.rows }} rows</span>
+            </div>
+            <p class="mb-2"><strong>Active dataset:</strong> {{ active_dataset }}</p>
+            <p class="mb-2"><strong>Detected numerical columns:</strong> {{ dataset_profile.numerical_columns|length }}</p>
+            <p class="mb-3"><strong>Detected categorical columns:</strong> {{ dataset_profile.categorical_columns|length }}</p>
+            <a href="/dataset" class="btn btn-outline-primary">Manage Dataset Upload</a>
+        </div>
+
+        <div class="panel-card mb-4">
+            <div class="panel-header">
+                <h3>Customer Profile Input</h3>
+                <span class="badge-soft">POST analytics</span>
+            </div>
+            <form method="post">
+                {% include "partials/profile_fields.html" %}
+                <button type="submit" class="btn btn-primary mt-4">Generate Intelligence Summary</button>
+            </form>
+        </div>
+
+        <div class="panel-card">
+            <div class="panel-header">
+                <h3>Market Filters</h3>
+                <span class="badge-soft">GET charts</span>
+            </div>
+            <form method="get">
+                {% include "partials/filter_fields.html" %}
+                <button type="submit" class="btn btn-outline-primary mt-4">Refresh Dashboard Charts</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-xl-7">
+        <div class="row g-3 stats-grid">
+            <div class="col-md-6 col-xxl-3"><div class="metric-card"><p>Total Filtered Customers</p><h3>{{ customer_count }}</h3></div></div>
+            <div class="col-md-6 col-xxl-3"><div class="metric-card"><p>Average Income</p><h3>Rs. {{ avg_income }}</h3></div></div>
+            <div class="col-md-6 col-xxl-3"><div class="metric-card"><p>Average Purchase</p><h3>Rs. {{ avg_purchase }}</h3></div></div>
+            <div class="col-md-6 col-xxl-3"><div class="metric-card"><p>High Churn Risk</p><h3>{{ high_risk_count }}</h3></div></div>
+            <div class="col-md-6 col-xxl-4"><div class="metric-card"><p>Highest Revenue Group</p><h3>{{ highest_revenue_group }}</h3></div></div>
+            <div class="col-md-6 col-xxl-4"><div class="metric-card"><p>Most Active Segment</p><h3>{{ most_active_segment }}</h3></div></div>
+            <div class="col-md-6 col-xxl-4"><div class="metric-card"><p>Fastest Growing Segment</p><h3>{{ fastest_growing_segment }}</h3></div></div>
+        </div>
+
+        <div class="panel-card summary-card mt-4">
+            <div class="panel-header">
+                <h3>Customer Intelligence Summary</h3>
+                <span class="badge-soft">{{ summary.segment.segment }}</span>
+            </div>
+            <div class="summary-grid">
+                <div><p>Segment</p><strong>{{ summary.segment.segment }}</strong><span>{{ summary.segment.confidence }}% confidence</span></div>
+                <div><p>Customer Type</p><strong>{{ summary.classification.customer_type }}</strong><span>{{ summary.classification.customer_probability }}% confidence</span></div>
+                <div><p>Churn Risk</p><strong>{{ summary.churn.risk_level }}</strong><span>{{ summary.churn.probability }}% churn probability</span></div>
+                <div><p>EMI Risk</p><strong>{{ summary.emi.risk }}</strong><span>{{ summary.emi.ratio }}% EMI ratio</span></div>
+                <div><p>Risk Category</p><strong>{{ summary.classification.risk_category }}</strong><span>{{ summary.classification.risk_probability }}% confidence</span></div>
+                <div><p>Predicted Purchase</p><strong>{{ summary.purchase.prediction }}</strong><span>{{ summary.purchase.probability }}% probability</span></div>
+            </div>
+            <div class="insight-box">
+                <p><strong>Behavior Analysis:</strong> {{ summary.behavior }}</p>
+                <p><strong>Retention Recommendation:</strong> {{ summary.churn.recommendation }}</p>
+                <p><strong>Recommended Products:</strong> {{ summary.recommendations|join(", ") }}</p>
+            </div>
+        </div>
+
+        <div class="panel-card mt-4">
+            <div class="panel-header">
+                <h3>Similar Customers</h3>
+                <span class="badge-soft">{{ summary.similar_count }} matches</span>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-darkless align-middle">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>City</th>
+                            <th>Segment</th>
+                            <th>Similarity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for customer in summary.similar_customers[:5] %}
+                        <tr>
+                            <td>{{ customer.Customer_ID }}</td>
+                            <td>{{ customer.Name }}</td>
+                            <td>{{ customer.City }}</td>
+                            <td>{{ customer.Segment }}</td>
+                            <td>{{ customer.Similarity_Score }}%</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 mt-1">
+    <div class="col-xl-6"><div class="panel-card chart-card">{{ charts.income_distribution|safe }}</div></div>
+    <div class="col-xl-6"><div class="panel-card chart-card">{{ charts.age_distribution|safe }}</div></div>
+    <div class="col-xl-6"><div class="panel-card chart-card">{{ charts.churn_distribution|safe }}</div></div>
+    <div class="col-xl-6"><div class="panel-card chart-card">{{ charts.segment_distribution|safe }}</div></div>
+    <div class="col-xl-6"><div class="panel-card chart-card">{{ charts.city_analysis|safe }}</div></div>
+    <div class="col-xl-6"><div class="panel-card chart-card">{{ charts.emi_risk_analysis|safe }}</div></div>
+    <div class="col-xl-6"><div class="panel-card chart-card">{{ charts.gender_analysis|safe }}</div></div>
+    <div class="col-xl-6"><div class="panel-card chart-card">{{ charts.purchase_frequency_analysis|safe }}</div></div>
+    <div class="col-xl-6"><div class="panel-card chart-card">{{ charts.product_popularity|safe }}</div></div>
+    <div class="col-xl-6"><div class="panel-card chart-card">{{ charts.revenue_analysis|safe }}</div></div>
+</div>
+{% endblock %}

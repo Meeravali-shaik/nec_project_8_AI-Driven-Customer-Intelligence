@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-panel mb-4">
+    <div>
+        <p class="eyebrow">Dynamic Customer Search</p>
+        <h2>Find similar customers from live input values</h2>
+        <p class="section-copy">Enter a customer profile and the system will search for comparable records using age, income, spending behavior, tenure, and satisfaction similarity.</p>
+    </div>
+    <div class="pill-note">{{ customer_count }} matching customers</div>
+</section>
+
+<div class="panel-card mb-4">
+    <form method="post">
+        {% include "partials/profile_fields.html" %}
+        <button type="submit" class="btn btn-primary mt-4">Find Similar Customers</button>
+    </form>
+</div>
+
+<div class="panel-card">
+    <div class="table-responsive">
+        <table class="table table-darkless align-middle">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Income</th>
+                    <th>City</th>
+                    <th>Occupation</th>
+                    <th>Segment</th>
+                    <th>Similarity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.Customer_ID }}</td>
+                    <td>{{ customer.Name }}</td>
+                    <td>{{ customer.Age }}</td>
+                    <td>Rs. {{ customer.Annual_Income }}</td>
+                    <td>{{ customer.City }}</td>
+                    <td>{{ customer.Occupation }}</td>
+                    <td>{{ customer.Segment }}</td>
+                    <td>{{ customer.Similarity_Score }}%</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

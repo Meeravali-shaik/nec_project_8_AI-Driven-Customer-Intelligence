@@ -1,0 +1,74 @@
+<div class="row g-3">
+    <div class="col-md-4">
+        <label class="form-label">Age</label>
+        <input type="number" class="form-control" name="Age" value="{{ profile.Age }}" required>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Annual Income</label>
+        <input type="number" class="form-control" name="Annual_Income" value="{{ profile.Annual_Income }}" required>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Monthly Income</label>
+        <input type="number" class="form-control" name="Monthly_Income" value="{{ profile.Monthly_Income }}" required>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">EMI</label>
+        <input type="number" class="form-control" name="EMI" value="{{ profile.EMI }}" required>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Gender</label>
+        <select class="form-select" name="Gender">
+            {% for gender in options.genders %}
+            <option value="{{ gender }}" {% if profile.Gender == gender %}selected{% endif %}>{{ gender }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">City</label>
+        <select class="form-select" name="City">
+            {% for city in options.cities %}
+            <option value="{{ city }}" {% if profile.City == city %}selected{% endif %}>{{ city }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Occupation</label>
+        <select class="form-select" name="Occupation">
+            {% for occupation in options.occupations %}
+            <option value="{{ occupation }}" {% if profile.Occupation == occupation %}selected{% endif %}>{{ occupation }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Product Category</label>
+        <select class="form-select" name="Product_Category">
+            {% for category in options.categories %}
+            <option value="{{ category }}" {% if profile.Product_Category == category %}selected{% endif %}>{{ category }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Purchase Frequency</label>
+        <input type="number" class="form-control" name="Purchase_Frequency" value="{{ profile.Purchase_Frequency }}" required>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Tenure</label>
+        <input type="number" class="form-control" name="Tenure_Months" value="{{ profile.Tenure_Months }}" required>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Product Expiry Days</label>
+        <input type="number" class="form-control" name="Product_Expiry_Days" value="{{ profile.Product_Expiry_Days }}" required>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Customer Satisfaction</label>
+        <input type="number" min="1" max="10" class="form-control" name="Customer_Satisfaction" value="{{ profile.Customer_Satisfaction }}" required>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Website Visits</label>
+        <input type="number" class="form-control" name="Website_Visits" value="{{ profile.Website_Visits }}" required>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Last Purchase Days</label>
+        <input type="number" class="form-control" name="Last_Purchase_Days" value="{{ profile.Last_Purchase_Days }}" required>
+    </div>
+</div>

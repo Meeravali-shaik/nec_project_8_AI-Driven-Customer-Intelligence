@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-panel mb-4">
+    <div>
+        <p class="eyebrow">Dynamic Segmentation</p>
+        <h2>K-Means segment prediction from current customer inputs</h2>
+        <p class="section-copy">Choose the clustering features and number of clusters. The platform rebuilds the K-Means model instantly and returns cluster names, statistics, and distribution charts.</p>
+    </div>
+    <div class="pill-note">{{ result.segment }}</div>
+</section>
+
+<div class="row g-4">
+    <div class="col-xl-5">
+        <div class="panel-card">
+            <form method="post">
+                <div class="row g-3 mb-3">
+                    <div class="col-12">
+                        <label class="form-label">Clustering Features</label>
+                        <select class="form-select" name="cluster_features" multiple size="6">
+                            {% for feature in available_features %}
+                            <option value="{{ feature }}" {% if feature in segmentation_config.cluster_features %}selected{% endif %}>{{ feature }}</option>
+                            {% endfor %}
+                        </select>
+                        <small class="text-muted">Use Ctrl/Cmd to select multiple features.</small>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Number of Clusters</label>
+                        <input type="number" min="2" max="6" class="form-control" name="cluster_count" value="{{ segmentation_config.cluster_count }}">
+                    </div>
+                </div>
+                {% include "partials/profile_fields.html" %}
+                <button type="submit" class="btn btn-primary mt-4">Run Segmentation</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-xl-7">
+        <div class="row g-3 mb-4">
+            <div class="col-md-6"><div class="metric-card"><p>Predicted Segment</p><h3>{{ result.segment }}</h3></div></div>
+            <div class="col-md-6"><div class="metric-card"><p>Confidence Score</p><h3>{{ result.confidence }}%</h3></div></div>
+        </div>
+        <div class="panel-card chart-card">{{ segment_graph|safe }}</div>
+        <div class="panel-card chart-card mt-4">{{ cluster_distribution|safe }}</div>
+    </div>
+</div>
+
+<div class="panel-card mt-4">
+    <h3 class="mb-3">Cluster Statistics</h3>
+    <div class="table-responsive">
+        <table class="table table-darkless align-middle">
+            <thead>
+                <tr>
+                    <th>Cluster</th>
+                    <th>Customers</th>
+                    <th>Avg Income</th>
+                    <th>Avg Spending</th>
+                    <th>Churn Risk</th>
+                    <th>Preferred Product</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cluster_stats %}
+                <tr>
+                    <td>{{ item.cluster_name }}</td>
+                    <td>{{ item.size }}</td>
+                    <td>Rs. {{ item.avg_income }}</td>
+                    <td>Rs. {{ item.avg_spending }}</td>
+                    <td>{{ item.churn_risk }}%</td>
+                    <td>{{ item.preferred_product }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="panel-card mt-4">
+    <h3 class="mb-3">Closest Matching Customers</h3>
+    <div class="table-responsive">
+        <table class="table table-darkless align-middle">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Income</th>
+                    <th>Frequency</th>
+                    <th>Segment</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.Customer_ID }}</td>
+                    <td>{{ customer.Name }}</td>
+                    <td>Rs. {{ customer.Annual_Income }}</td>
+                    <td>{{ customer.Purchase_Frequency }}</td>
+                    <td>{{ customer.Segment }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

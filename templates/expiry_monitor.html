@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-panel mb-4">
+    <div>
+        <p class="eyebrow">Dynamic Expiry Monitoring</p>
+        <h2>Detect critical, warning, and safe expiry states in real time</h2>
+        <p class="section-copy">Use live product expiry days to classify urgency and surface the next recommended customer action.</p>
+    </div>
+    <div class="pill-note">{{ result.status }}</div>
+</section>
+
+<div class="row g-4">
+    <div class="col-xl-5">
+        <div class="panel-card">
+            <form method="post">
+                {% include "partials/profile_fields.html" %}
+                <button type="submit" class="btn btn-primary mt-4">Check Expiry Status</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-xl-7">
+        <div class="row g-3 mb-4">
+            <div class="col-md-6"><div class="metric-card"><p>Expiry Status</p><h3>{{ result.status }}</h3></div></div>
+            <div class="col-md-6"><div class="metric-card"><p>Days Remaining</p><h3>{{ profile.Product_Expiry_Days }}</h3></div></div>
+        </div>
+        <div class="panel-card"><p class="mb-0">{{ result.action }}</p></div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Driven Customer Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div>
+                <p class="eyebrow">Customer Analytics</p>
+                <h1>AI Intelligence Hub</h1>
+                <p class="sidebar-copy">Real-time segmentation, churn scoring, purchase prediction, and filtered market analytics.</p>
+            </div>
+
+            <nav class="nav-links">
+                <a href="/dataset">Dataset Upload</a>
+                <a href="/">Dashboard</a>
+                <a href="/customers">Customer Search</a>
+                <a href="/segmentation">Segmentation</a>
+                <a href="/classification">Classification</a>
+                <a href="/prediction">Purchase Prediction</a>
+                <a href="/churn">Churn Analysis</a>
+                <a href="/recommendations">Recommendations</a>
+                <a href="/behavior-analysis">Behavior Analysis</a>
+                <a href="/market-analysis">Market Analysis</a>
+                <a href="/emi-analysis">EMI Analysis</a>
+                <a href="/tenure-analysis">Tenure Analysis</a>
+                <a href="/expiry-monitor">Expiry Monitor</a>
+                <a href="/reports">Reports</a>
+            </nav>
+        </aside>
+
+        <main class="content">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} mb-3">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>

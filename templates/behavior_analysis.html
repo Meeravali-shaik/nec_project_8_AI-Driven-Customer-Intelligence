@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-panel mb-4">
+    <div>
+        <p class="eyebrow">Behavior Analysis</p>
+        <h2>Analyze filtered customers and compare against the live profile</h2>
+        <p class="section-copy">Use filters to change the population view, then compare that audience with the current customer profile’s behavior signal and recommendation summary.</p>
+    </div>
+    <div class="pill-note">{{ avg_frequency }} avg frequency</div>
+</section>
+
+<div class="panel-card mb-4">
+    <div class="panel-header">
+        <h3>Market Filters</h3>
+        <span class="badge-soft">Dynamic dataframe</span>
+    </div>
+    <form method="get">
+        {% include "partials/filter_fields.html" %}
+        <button type="submit" class="btn btn-outline-primary mt-4">Update Behavior Charts</button>
+    </form>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-3"><div class="metric-card"><p>Average Spending</p><h3>Rs. {{ avg_spending }}</h3></div></div>
+    <div class="col-md-3"><div class="metric-card"><p>Average Frequency</p><h3>{{ avg_frequency }}</h3></div></div>
+    <div class="col-md-3"><div class="metric-card"><p>Popular Product</p><h3>{{ popular_product }}</h3></div></div>
+    <div class="col-md-3"><div class="metric-card"><p>Most Active Customer</p><h3>{{ active_customer }}</h3></div></div>
+</div>
+
+<div class="panel-card mb-4">
+    <h3 class="mb-3">Profile Behavior Insight</h3>
+    <p class="mb-0">{{ summary.behavior }}</p>
+</div>
+
+<div class="row g-4">
+    <div class="col-xl-6"><div class="panel-card chart-card">{{ charts.age_spend|safe }}</div></div>
+    <div class="col-xl-6"><div class="panel-card chart-card">{{ charts.income_spend|safe }}</div></div>
+    <div class="col-12"><div class="panel-card chart-card">{{ charts.frequency_distribution|safe }}</div></div>
+</div>
+{% endblock %}

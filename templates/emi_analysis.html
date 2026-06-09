@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-panel mb-4">
+    <div>
+        <p class="eyebrow">Dynamic EMI Analysis</p>
+        <h2>Classify EMI burden and financial health from live values</h2>
+        <p class="section-copy">Enter income and EMI information to calculate EMI ratio, risk class, and a quick financial health interpretation.</p>
+    </div>
+    <div class="pill-note">{{ result.risk }}</div>
+</section>
+
+<div class="row g-4">
+    <div class="col-xl-5">
+        <div class="panel-card">
+            <form method="post">
+                {% include "partials/profile_fields.html" %}
+                <button type="submit" class="btn btn-primary mt-4">Run EMI Analysis</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-xl-7">
+        <div class="row g-3 mb-4">
+            <div class="col-md-6"><div class="metric-card"><p>EMI Ratio</p><h3>{{ result.ratio }}%</h3></div></div>
+            <div class="col-md-6"><div class="metric-card"><p>Risk Class</p><h3>{{ result.risk }}</h3></div></div>
+        </div>
+        <div class="panel-card"><p class="mb-0">{{ result.insight }}</p></div>
+    </div>
+</div>
+{% endblock %}

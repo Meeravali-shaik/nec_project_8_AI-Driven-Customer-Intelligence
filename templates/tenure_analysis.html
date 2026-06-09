@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-panel mb-4">
+    <div>
+        <p class="eyebrow">Tenure Analysis</p>
+        <h2>Measure loyalty, long-term value, and new-customer mix</h2>
+        <p class="section-copy">Filter the market and the tenure metrics update instantly to show loyalty strength and customer maturity across the active dataset.</p>
+    </div>
+    <div class="pill-note">{{ customer_count }} customers</div>
+</section>
+
+<div class="panel-card mb-4">
+    <form method="get">
+        {% include "partials/filter_fields.html" %}
+        <button type="submit" class="btn btn-outline-primary mt-4">Refresh Tenure Analysis</button>
+    </form>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4"><div class="metric-card"><p>Average Tenure</p><h3>{{ summary.avg_tenure }}</h3></div></div>
+    <div class="col-md-4"><div class="metric-card"><p>Loyal Customers</p><h3>{{ summary.loyal_customers }}</h3></div></div>
+    <div class="col-md-4"><div class="metric-card"><p>New Customers</p><h3>{{ summary.new_customers }}</h3></div></div>
+</div>
+
+<div class="panel-card mb-4">
+    <p><strong>Insight:</strong> {{ summary.loyalty_insight }}</p>
+</div>
+
+<div class="row g-4">
+    <div class="col-xl-6"><div class="panel-card chart-card">{{ charts.tenure_distribution|safe }}</div></div>
+    <div class="col-xl-6"><div class="panel-card chart-card">{{ charts.tenure_vs_spending|safe }}</div></div>
+</div>
+{% endblock %}

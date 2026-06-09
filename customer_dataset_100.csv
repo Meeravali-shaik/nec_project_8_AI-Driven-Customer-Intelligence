@@ -1,0 +1,101 @@
+Customer_ID,Name,Age,Gender,City,Occupation,Annual_Income,Monthly_Income,EMI,Marital_Status,Dependents,Tenure_Months,Product_Category,Last_Product,Purchase_Amount,Purchase_Frequency,Total_Purchases,Avg_Order_Value,Last_Purchase_Days,Product_Expiry_Days,Customer_Satisfaction,Website_Visits,Email_Clicks,Discount_Usage,Churn_Status,Next_Purchase_Category
+C001,Max Chana,28,Female,Bangalore,Engineer,352451,29370,9012,Single,1,32,Furniture,Furniture,20289,12,48,1690,53,346,9,6,18,Yes,0,Wardrobe
+C002,Oni Jayaraman,33,Female,Chennai,Doctor,1662906,138575,71426,Single,2,54,Furniture,Furniture,60878,10,20,6087,143,3,3,45,13,Yes,1,Study Table
+C003,Aarush Pant,27,Female,Delhi,Analyst,1052834,87736,22541,Single,0,34,Electronics,Electronics,97647,8,8,12205,275,63,7,6,17,Yes,0,Smartwatch
+C004,Tanay Dhar,26,Female,Delhi,Teacher,788197,65683,6619,Single,4,49,Fashion,Fashion,61429,11,44,5584,187,83,6,23,6,Yes,0,Watch
+C005,Arunima Wason,45,Female,Chennai,Teacher,866121,72176,41943,Single,4,72,Furniture,Furniture,91733,6,36,15288,29,117,1,52,10,Yes,0,Wardrobe
+C006,Fariq Baria,52,Female,Pune,Designer,1129700,94141,42129,Married,1,59,Banking,Banking,36718,3,9,12239,127,287,9,17,23,No,0,Credit Card
+C007,Jhalak Pall,24,Female,Pune,Engineer,529950,44162,5008,Single,4,21,Education,Education,80172,2,10,40086,198,195,10,30,16,No,0,Online Course
+C008,Sai Pal,39,Male,Delhi,Manager,1211768,100980,10365,Single,1,59,Electronics,Electronics,96646,12,72,8053,135,256,3,33,29,Yes,0,Earbuds
+C009,Gagan Mohanty,54,Male,Bangalore,Consultant,301199,25099,9813,Single,4,42,Healthcare,Healthcare,4552,2,6,2276,186,157,4,4,7,Yes,1,Medicine Subscription
+C010,Mugdha Kadakia,51,Female,Delhi,Analyst,1453021,121085,21643,Married,4,34,Automobile,Automobile,81507,7,56,11643,109,276,4,46,9,Yes,0,Bike Service
+C011,Udant Baria,35,Male,Hyderabad,Teacher,434272,36189,11078,Single,2,3,Groceries,Groceries,74603,4,8,18650,302,112,1,5,22,Yes,1,Premium Membership
+C012,Bakhshi Verma,52,Male,Delhi,Designer,749287,62440,35339,Married,3,17,Groceries,Groceries,77525,8,56,9690,125,242,7,13,3,No,0,Organic Foods
+C013,Maanav Bhargava,24,Female,Hyderabad,Designer,1712147,142678,84696,Single,2,13,Electronics,Electronics,54772,12,96,4564,174,55,4,13,6,Yes,0,Laptop
+C014,Oeshi Verma,49,Male,Mumbai,Engineer,1454115,121176,12833,Single,3,7,Automobile,Automobile,3934,2,2,1967,122,85,7,32,15,No,0,Car Accessory
+C015,Ganga Master,50,Male,Delhi,Analyst,898210,74850,27722,Single,0,72,Healthcare,Healthcare,22289,4,40,5572,152,111,1,38,23,No,0,Medicine Subscription
+C016,Baljiwan Suri,54,Male,Pune,Engineer,630160,52513,1863,Single,3,66,Insurance,Insurance,26356,2,20,13178,305,34,4,26,3,No,1,Life Insurance
+C017,Amrita Bhagat,34,Male,Bangalore,Consultant,1704517,142043,41180,Single,0,31,Fashion,Fashion,53876,3,27,17958,344,330,5,30,10,Yes,0,Jacket
+C018,Liam Saxena,37,Male,Delhi,Manager,577781,48148,11436,Single,1,9,Furniture,Furniture,50434,5,25,10086,81,224,9,46,9,Yes,0,Office Chair
+C019,Jason Bali,56,Female,Bangalore,Teacher,625997,52166,8924,Married,2,37,Groceries,Groceries,29607,12,12,2467,176,104,5,33,15,Yes,0,Premium Membership
+C020,Veer Patel,29,Male,Pune,Engineer,1636123,136343,34335,Married,4,21,Healthcare,Healthcare,74309,12,108,6192,219,287,1,8,2,Yes,1,Fitness Plan
+C021,Hredhaan Johal,29,Female,Pune,Doctor,387721,32310,10101,Single,1,47,Electronics,Electronics,48898,4,12,12224,350,127,2,23,24,No,1,Laptop
+C022,Ranveer Singh,32,Male,Hyderabad,Consultant,996643,83053,26982,Married,2,32,Fashion,Fashion,22866,12,48,1905,56,195,1,55,15,Yes,0,Shoes
+C023,Sai Gade,33,Female,Bangalore,Teacher,1135643,94636,21512,Married,1,36,Insurance,Insurance,38585,6,60,6430,329,260,7,44,26,No,0,Health Insurance
+C024,Anjali Sinha,27,Male,Chennai,Engineer,1551100,129258,56959,Married,0,45,Travel,Travel,59199,10,90,5919,262,59,7,58,18,Yes,0,Flight Ticket
+C025,Joshua Patla,48,Female,Chennai,Designer,446745,37228,21765,Married,4,43,Groceries,Groceries,43145,11,33,3922,64,153,9,20,21,Yes,0,Premium Membership
+C026,Damyanti Chawla,45,Female,Mumbai,Consultant,1720438,143369,22810,Married,1,39,Education,Education,73819,1,9,73819,156,146,4,28,25,No,0,Book Bundle
+C027,Chaitanya Ahluwalia,31,Male,Delhi,Manager,1681710,140142,11114,Single,1,37,Automobile,Automobile,89012,11,33,8092,318,171,2,53,30,Yes,1,Bike Service
+C028,Zaitra Shah,36,Male,Hyderabad,Engineer,1296433,108036,40060,Single,3,10,Healthcare,Healthcare,56321,11,44,5120,295,99,7,32,12,Yes,0,Medicine Subscription
+C029,Urishilla Raman,54,Female,Mumbai,Designer,1274231,106185,3291,Married,1,72,Furniture,Furniture,17906,8,64,2238,69,237,9,36,19,No,0,Study Table
+C030,Yashasvi Sekhon,36,Male,Chennai,Analyst,1637272,136439,36347,Married,4,67,Healthcare,Healthcare,84149,4,8,21037,141,225,2,46,9,Yes,0,Health Checkup
+C031,Amaira Gandhi,35,Male,Hyderabad,Designer,1103283,91940,45478,Married,4,20,Furniture,Furniture,10418,7,7,1488,209,169,9,30,13,No,0,Study Table
+C032,Nathan Gola,21,Female,Mumbai,Consultant,1037691,86474,19569,Single,3,50,Education,Education,72545,12,72,6045,280,308,4,32,7,No,1,Book Bundle
+C033,Chaman Sachar,31,Male,Delhi,Designer,1280188,106682,60263,Single,3,17,Groceries,Groceries,72008,1,3,72008,202,303,10,43,0,Yes,0,Premium Membership
+C034,Libni Aurora,45,Female,Bangalore,Engineer,986508,82209,13871,Married,1,59,Travel,Travel,46236,7,14,6605,143,215,5,54,2,Yes,0,Holiday Package
+C035,Abeer Ramaswamy,36,Female,Chennai,Doctor,718089,59840,1335,Single,1,20,Furniture,Furniture,18544,8,40,2318,343,58,10,14,14,Yes,0,Wardrobe
+C036,Lekha Yadav,22,Female,Delhi,Teacher,954221,79518,37735,Single,2,49,Education,Education,95718,4,36,23929,39,303,4,7,22,No,0,Book Bundle
+C037,Nachiket Baral,44,Female,Delhi,Doctor,444612,37051,16579,Married,1,44,Electronics,Electronics,57057,8,72,7132,55,221,6,41,28,No,0,Earbuds
+C038,Rudra Gala,55,Male,Mumbai,Designer,1313967,109497,60931,Married,0,56,Groceries,Groceries,37179,6,48,6196,126,44,5,57,14,No,0,Monthly Grocery Pack
+C039,Pahal Sood,52,Male,Bangalore,Student,744847,62070,23253,Married,3,34,Travel,Travel,38655,10,90,3865,360,141,9,1,16,Yes,0,Hotel Booking
+C040,Warhi Dada,51,Female,Mumbai,Analyst,1654556,137879,64332,Married,4,58,Electronics,Electronics,14196,5,30,2839,114,207,4,20,21,No,0,Earbuds
+C041,Ekani Bal,50,Male,Hyderabad,Student,868152,72346,20094,Married,2,33,Furniture,Furniture,17814,12,120,1484,99,161,2,48,17,No,0,Office Chair
+C042,Geetika Master,33,Male,Pune,Manager,921273,76772,14908,Single,3,47,Banking,Banking,41618,1,2,41618,363,273,3,18,1,Yes,1,Fixed Deposit
+C043,Azaan Sani,39,Female,Mumbai,Teacher,1284396,107033,31373,Single,1,57,Travel,Travel,26164,1,3,26164,130,244,2,53,2,No,0,Holiday Package
+C044,Nathaniel Mall,36,Female,Chennai,Designer,548410,45700,18286,Married,4,54,Groceries,Groceries,80135,10,100,8013,116,267,7,29,29,Yes,0,Organic Foods
+C045,Raagini Golla,27,Female,Mumbai,Consultant,735762,61313,13829,Married,0,34,Insurance,Insurance,22585,4,16,5646,89,282,2,11,0,No,0,Vehicle Insurance
+C046,Indrajit Dhawan,39,Male,Delhi,Doctor,1774271,147855,59510,Married,1,10,Furniture,Furniture,36675,11,22,3334,302,338,4,28,3,Yes,1,Office Chair
+C047,Jeremiah Madan,40,Female,Mumbai,Teacher,1547897,128991,74607,Single,3,37,Healthcare,Healthcare,18299,8,48,2287,353,155,7,18,16,No,0,Health Checkup
+C048,Ekaraj Chandra,26,Female,Hyderabad,Designer,780089,65007,37696,Married,0,3,Fashion,Fashion,77529,1,8,77529,90,240,9,42,14,No,0,Watch
+C049,Maanav Soni,42,Female,Pune,Engineer,973307,81108,43917,Married,0,14,Banking,Banking,45228,7,42,6461,356,253,5,43,30,No,0,Personal Loan
+C050,Omya Lalla,28,Female,Pune,Consultant,1147616,95634,56682,Married,0,66,Electronics,Electronics,88200,9,36,9800,237,211,1,13,16,No,1,Earbuds
+C051,Peter Butala,29,Male,Pune,Designer,904040,75336,28712,Single,1,63,Insurance,Insurance,5783,11,22,1000,312,122,3,20,17,No,1,Health Insurance
+C052,Oeshi Sengupta,30,Female,Hyderabad,Doctor,1345169,112097,38254,Single,2,66,Fashion,Fashion,56459,8,56,7057,242,124,8,36,4,No,0,Jacket
+C053,Amaira Saini,38,Female,Chennai,Designer,305379,25448,4634,Married,2,39,Groceries,Groceries,78011,11,44,7091,251,76,8,35,15,Yes,0,Organic Foods
+C054,Mitesh Prasad,45,Male,Mumbai,Engineer,789815,65817,26920,Single,4,6,Travel,Travel,99609,8,80,12451,362,195,7,43,25,No,0,Holiday Package
+C055,Zehaan Grewal,49,Female,Chennai,Designer,509110,42425,17234,Single,2,59,Electronics,Electronics,96692,3,27,32230,210,335,3,5,15,No,1,Smartwatch
+C056,Indrajit Aurora,52,Male,Mumbai,Doctor,1434592,119549,4705,Married,0,9,Furniture,Furniture,84727,11,11,7702,148,116,2,28,3,No,0,Office Chair
+C057,Upkaar Sinha,39,Male,Pune,Designer,1051752,87646,24565,Single,3,56,Banking,Banking,34007,9,90,3778,211,289,3,11,5,Yes,1,Credit Card
+C058,Mitesh Sur,50,Female,Chennai,Manager,1637782,136481,33289,Married,2,59,Fashion,Fashion,89404,1,8,89404,239,147,9,11,2,No,0,Shoes
+C059,Vansha Tailor,45,Female,Chennai,Engineer,1313360,109446,13979,Single,4,31,Education,Education,76963,6,48,12827,295,151,5,2,26,No,0,Online Course
+C060,Unnati Sathe,59,Male,Chennai,Consultant,1038870,86572,14352,Single,4,25,Groceries,Groceries,34850,11,66,3168,338,348,3,41,3,Yes,1,Monthly Grocery Pack
+C061,Bakhshi Rana,39,Female,Hyderabad,Manager,985179,82098,48986,Married,2,54,Banking,Banking,28318,3,18,9439,277,187,9,33,29,Yes,0,Personal Loan
+C062,Girish Sule,25,Male,Mumbai,Analyst,595188,49599,24712,Married,4,29,Education,Education,75048,6,42,12508,47,202,1,17,17,No,0,Online Course
+C063,Tristan Misra,35,Female,Delhi,Designer,1288758,107396,1640,Single,1,72,Travel,Travel,81964,4,4,20491,332,32,8,59,22,Yes,0,Flight Ticket
+C064,Samaksh Kulkarni,52,Male,Mumbai,Teacher,543522,45293,3184,Married,4,31,Automobile,Automobile,19781,7,49,2825,233,189,9,27,18,No,0,Bike Service
+C065,Wridesh Atwal,44,Female,Bangalore,Designer,755647,62970,29057,Married,1,57,Furniture,Furniture,49537,2,4,24768,352,188,9,58,20,No,0,Office Chair
+C066,Vyanjana Char,34,Male,Pune,Student,1645751,137145,78269,Single,2,3,Electronics,Electronics,45713,4,12,11428,65,289,4,5,26,Yes,0,Smartwatch
+C067,Harshil Koshy,30,Male,Pune,Analyst,572613,47717,17701,Single,1,33,Banking,Banking,16408,11,55,1491,14,67,1,23,25,Yes,0,Credit Card
+C068,Unni Rana,47,Male,Pune,Engineer,1403281,116940,14896,Married,3,9,Healthcare,Healthcare,60756,6,6,10126,263,303,2,29,16,Yes,1,Fitness Plan
+C069,Suhani Shah,46,Male,Hyderabad,Manager,1193960,99496,44964,Married,3,14,Healthcare,Healthcare,95375,8,80,11921,38,41,6,39,4,No,0,Fitness Plan
+C070,Indali Devi,53,Male,Mumbai,Analyst,1569672,130806,56387,Married,3,13,Insurance,Insurance,87814,11,77,7983,283,110,7,29,28,Yes,0,Life Insurance
+C071,Chaman Barad,48,Male,Mumbai,Teacher,955409,79617,43588,Married,1,33,Travel,Travel,22006,11,99,2000,243,34,2,54,2,Yes,1,Hotel Booking
+C072,Geetika Grover,56,Female,Bangalore,Student,1477935,123161,43207,Single,3,16,Education,Education,48346,11,44,4395,217,26,5,39,9,Yes,1,Certification
+C073,Qushi Dewan,56,Male,Pune,Manager,1070831,89235,7529,Single,1,36,Groceries,Groceries,31643,7,35,4520,288,318,10,44,20,No,0,Premium Membership
+C074,Chasmum Sabharwal,43,Male,Mumbai,Designer,312804,26067,2972,Married,2,19,Groceries,Groceries,88159,7,21,12594,36,72,1,6,23,No,0,Premium Membership
+C075,Chakradhar Chahal,41,Female,Mumbai,Consultant,1490329,124194,11135,Married,2,7,Banking,Banking,22632,10,40,2263,26,345,2,18,14,Yes,0,Personal Loan
+C076,Nihal Keer,48,Male,Hyderabad,Manager,532552,44379,9281,Single,1,63,Automobile,Automobile,89442,5,25,17888,24,112,7,39,1,No,0,Car Accessory
+C077,Gaurav Gupta,28,Female,Bangalore,Designer,316210,26350,8149,Single,3,56,Banking,Banking,18932,7,7,2704,273,360,4,33,17,No,1,Credit Card
+C078,Manbir Deo,41,Female,Delhi,Analyst,1507454,125621,56267,Single,3,52,Education,Education,39947,2,4,19973,208,10,6,11,25,Yes,1,Certification
+C079,Hredhaan Srinivas,58,Male,Pune,Teacher,1139804,94983,34338,Single,2,11,Education,Education,42668,12,72,3555,174,113,6,50,5,Yes,0,Online Course
+C080,Turvi Solanki,27,Female,Mumbai,Consultant,607115,50592,8387,Married,2,26,Banking,Banking,80957,3,9,26985,336,38,3,50,20,No,1,Credit Card
+C081,Guneet Natt,51,Female,Bangalore,Engineer,1227377,102281,41378,Married,2,39,Fashion,Fashion,79518,1,2,79518,181,259,2,20,14,Yes,1,Jacket
+C082,Umang Kapoor,59,Female,Pune,Consultant,1363398,113616,50394,Single,0,60,Groceries,Groceries,74655,12,96,6221,22,230,10,42,6,Yes,0,Premium Membership
+C083,Imaran Talwar,26,Female,Chennai,Manager,1358115,113176,22617,Married,3,6,Furniture,Furniture,94749,8,48,11843,225,268,9,40,5,Yes,0,Wardrobe
+C084,Vinaya Dalal,42,Female,Bangalore,Doctor,438227,36518,10803,Married,2,13,Automobile,Automobile,90916,7,49,12988,146,129,10,56,4,Yes,0,Vehicle Insurance
+C085,Rayaan Gill,26,Female,Pune,Analyst,949240,79103,36629,Single,2,49,Travel,Travel,18750,11,55,1704,360,350,9,6,20,Yes,0,Holiday Package
+C086,Ishita Kari,42,Male,Delhi,Analyst,1319784,109982,25166,Single,4,29,Banking,Banking,22308,2,14,11154,152,51,9,50,17,Yes,0,Credit Card
+C087,Orinder Ben,32,Female,Delhi,Consultant,1753002,146083,81885,Single,4,22,Healthcare,Healthcare,7726,7,28,1103,187,346,4,29,19,No,1,Fitness Plan
+C088,Harshil Chakraborty,33,Male,Pune,Doctor,1071418,89284,44453,Married,0,57,Healthcare,Healthcare,38932,7,56,5561,258,270,7,11,26,No,0,Medicine Subscription
+C089,Fiyaz Johal,27,Female,Bangalore,Student,1791915,149326,67621,Married,2,16,Fashion,Fashion,12993,3,3,4331,140,230,9,10,26,No,0,Shoes
+C090,Bhavna Keer,46,Female,Hyderabad,Doctor,1352785,112732,49015,Single,2,31,Education,Education,12696,6,48,2116,115,14,6,60,3,Yes,1,Book Bundle
+C091,Anjali Venkataraman,51,Female,Bangalore,Manager,1240785,103398,40327,Single,2,1,Insurance,Insurance,4490,5,10,1000,111,76,9,47,19,Yes,0,Health Insurance
+C092,Idika Ahuja,47,Male,Delhi,Doctor,1639978,136664,81633,Married,3,59,Insurance,Insurance,16530,8,8,2066,306,274,1,41,16,No,1,Health Insurance
+C093,Chandresh Sidhu,57,Male,Mumbai,Consultant,1173605,97800,12275,Single,3,11,Automobile,Automobile,49265,2,12,24632,270,278,9,51,16,No,0,Vehicle Insurance
+C094,Jack Reddy,22,Female,Hyderabad,Engineer,1048880,87406,51676,Married,4,9,Travel,Travel,33604,12,72,2800,337,321,2,50,18,Yes,1,Hotel Booking
+C095,Bhavna Gulati,50,Male,Bangalore,Analyst,1758336,146528,62722,Married,4,24,Banking,Banking,10270,12,84,1000,235,18,5,13,1,No,1,Personal Loan
+C096,Zehaan Swamy,23,Female,Mumbai,Consultant,1656648,138054,25048,Married,2,37,Travel,Travel,8265,11,33,1000,170,139,2,52,11,No,0,Hotel Booking
+C097,Ekavir Patla,52,Male,Pune,Manager,1070382,89198,52251,Married,0,67,Fashion,Fashion,12828,12,24,1069,218,40,7,39,26,No,0,Jacket
+C098,Ekbal Datta,39,Female,Pune,Designer,942768,78564,29223,Married,0,55,Banking,Banking,92408,8,16,11551,180,228,1,47,27,No,0,Personal Loan
+C099,Logan Bhagat,53,Female,Chennai,Designer,1724827,143735,20969,Single,4,4,Banking,Banking,81635,11,33,7421,225,17,3,5,7,No,1,Personal Loan
+C100,Pahal Sane,44,Male,Bangalore,Engineer,1231008,102584,50009,Single,3,10,Groceries,Groceries,20047,9,81,2227,188,203,6,42,8,No,0,Organic Foods

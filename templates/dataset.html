@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-panel mb-4">
+    <div>
+        <p class="eyebrow">Dataset Upload</p>
+        <h2>Upload CSV or Excel files and let the platform detect the schema automatically</h2>
+        <p class="section-copy">The current dataset drives every filter, KPI, model prediction, chart, and recommendation across the app.</p>
+    </div>
+    <div class="pill-note">{{ dataset_profile.rows }} rows</div>
+</section>
+
+<div class="row g-4">
+    <div class="col-xl-5">
+        <div class="panel-card mb-4">
+            <div class="panel-header">
+                <h3>Active Dataset</h3>
+                <span class="badge-soft">{{ active_dataset }}</span>
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label">Upload Dataset</label>
+                    <input class="form-control" type="file" name="dataset_file" accept=".csv,.xlsx" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Upload & Analyze</button>
+            </form>
+            <form method="post" class="mt-3">
+                <input type="hidden" name="action" value="reset">
+                <button type="submit" class="btn btn-outline-primary">Use Default Sample Dataset</button>
+            </form>
+        </div>
+
+        <div class="panel-card">
+            <div class="panel-header">
+                <h3>Detected Field Mapping</h3>
+                <span class="badge-soft">{{ dataset_profile.field_mapping|length }} linked</span>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-darkless align-middle">
+                    <thead>
+                        <tr>
+                            <th>Business Field</th>
+                            <th>Detected Column</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for field, source in dataset_profile.field_mapping.items() %}
+                        <tr>
+                            <td>{{ field }}</td>
+                            <td>{{ source }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-7">
+        <div class="row g-3 stats-grid">
+            <div class="col-md-3"><div class="metric-card"><p>Rows</p><h3>{{ dataset_profile.rows }}</h3></div></div>
+            <div class="col-md-3"><div class="metric-card"><p>Columns</p><h3>{{ dataset_profile.columns }}</h3></div></div>
+            <div class="col-md-3"><div class="metric-card"><p>Numeric Columns</p><h3>{{ dataset_profile.numerical_columns|length }}</h3></div></div>
+            <div class="col-md-3"><div class="metric-card"><p>Categorical Columns</p><h3>{{ dataset_profile.categorical_columns|length }}</h3></div></div>
+        </div>
+
+        <div class="panel-card mt-4">
+            <div class="panel-header">
+                <h3>Detected Numerical Columns</h3>
+                <span class="badge-soft">Auto Profile</span>
+            </div>
+            <p>{{ dataset_profile.numerical_columns|join(", ") if dataset_profile.numerical_columns else "No numerical columns detected." }}</p>
+        </div>
+
+        <div class="panel-card mt-4">
+            <div class="panel-header">
+                <h3>Detected Categorical Columns</h3>
+                <span class="badge-soft">Auto Profile</span>
+            </div>
+            <p>{{ dataset_profile.categorical_columns|join(", ") if dataset_profile.categorical_columns else "No categorical columns detected." }}</p>
+        </div>
+
+        <div class="panel-card mt-4">
+            <div class="panel-header">
+                <h3>Missing Value Summary</h3>
+                <span class="badge-soft">{{ dataset_profile.missing_columns|length }} columns</span>
+            </div>
+            {% if dataset_profile.missing_columns %}
+            <div class="table-responsive">
+                <table class="table table-darkless align-middle">
+                    <thead>
+                        <tr>
+                            <th>Column</th>
+                            <th>Missing Values</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in dataset_profile.missing_columns %}
+                        <tr>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.count }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p>No missing values detected.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

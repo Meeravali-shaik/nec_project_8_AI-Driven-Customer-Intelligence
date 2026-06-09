@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-panel mb-4">
+    <div>
+        <p class="eyebrow">Dynamic Reports</p>
+        <h2>Export the currently filtered customer dataset in multiple formats</h2>
+        <p class="section-copy">Apply your analysis filters first, then download the filtered dataframe as CSV, Excel, or PDF for reporting and handoff.</p>
+    </div>
+    <div class="pill-note">{{ active_dataset }}</div>
+</section>
+
+<div class="panel-card">
+    <form method="get">
+        {% include "partials/filter_fields.html" %}
+        <div class="d-flex gap-3 mt-4 flex-wrap">
+            <button type="submit" class="btn btn-outline-primary">Refresh Report Scope</button>
+            <a
+                href="/export-csv?age_min={{ filters.age_min }}&age_max={{ filters.age_max }}&income_min={{ filters.income_min }}&income_max={{ filters.income_max }}&city={{ filters.city }}&gender={{ filters.gender }}"
+                class="btn btn-primary"
+            >
+                Download Filtered CSV
+            </a>
+            <a
+                href="/export-excel?age_min={{ filters.age_min }}&age_max={{ filters.age_max }}&income_min={{ filters.income_min }}&income_max={{ filters.income_max }}&city={{ filters.city }}&gender={{ filters.gender }}"
+                class="btn btn-primary"
+            >
+                Download Excel
+            </a>
+            <a
+                href="/export-pdf?age_min={{ filters.age_min }}&age_max={{ filters.age_max }}&income_min={{ filters.income_min }}&income_max={{ filters.income_max }}&city={{ filters.city }}&gender={{ filters.gender }}"
+                class="btn btn-primary"
+            >
+                Download PDF
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}
