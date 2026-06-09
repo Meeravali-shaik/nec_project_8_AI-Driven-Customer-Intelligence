@@ -1,5 +1,5 @@
 # AI-Driven Customer Intelligence and Predictive Analytics Platform
-url: https://1rr8qg98-5000.inc1.devtunnels.ms/
+url: https://huggingface.co/spaces/Meeravali2999/customer_analaysis
 
 output:
 <img width="1918" height="908" alt="Screenshot 2026-06-09 094302" src="https://github.com/user-attachments/assets/97ef80ce-a1c6-4c00-b936-6b1673fb956b" />
